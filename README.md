@@ -126,7 +126,50 @@ Java采用Spring Boot + Dubbo + MyBatis 技术栈
 
 使用nginx+docker+k8s进行持续集成与发布管理。
 
+## 五、工欲善其事必先利其器
 
+java采用jdk1.8
+
+### 5.1开发工具
+
+#### Java开发工具配置及优化
+
+Java端采用[IDEA](https://www.jetbrains.com/)进行开发：下载地址：https://www.jetbrains.com/
+
+使用IDEA时有不少**优质的插件**，推荐安装：
+
+1. **Grep console**： 支持自定义控制台不同级别的日志颜色
+2.  **Free Mybatis plugin** ：根据Mapper类中方法名可直接跳转到mapper.xml
+3.  **MyBatis Log Plugin** : 默认情况下MyBatis显示的脚本不是可执行的，这个插件就可以直接将Mybatis执行的sql脚本 
+4.  **Alibaba Java Coding Guidelines** ：阿里巴巴代码规范检查插件
+5.  **Lombok** ：利用注解的形式，省去get/set等方法
+6.  **Gsonformat** ：可以根据json快速生成java实体
+7.  **Restfultookit** ：主要用于调试接口，可以生成默认的数据，可根据Url快速找到对应的controller
+8.  **JRebel** ：热部署插件
+9.   **GenerateAllSetter** :new POJO类的时候快速生成set方法
+
+如果其他小伙伴有更好的插件推荐，欢迎提出哦~
+
+#### 前端开发工具配置及其优化
+
+Java端采用[VS Code](https://code.visualstudio.com)进行开发：下载地址：https://code.visualstudio.com/
+
+为了便于开发VS Code也有不少**优质的插件**推荐：
+
+1. **Auto Close Tag**：自动添加html的关闭标签
+2. **Auto Rename Tag**：修改标签时，自动修改结束标签的名字
+3.  **Beautify** ：代码美化格式化工具
+4.  **Color Info** ：css中设置颜色时显示色彩信息
+5.  **ESLint** ：前端规范插件，可以检查语法错误
+6. **JavaScript (ES6) code snippets**：ES6语法提示
+7. **Path Intellisense**：输入路径后自动补全
+8. **vscode-element-helper**：element UI库的代码提示
+9. **npm Intellisense**：在导包时对依赖包进行提示
+10. **Reactjs code snippets**：react代码提示插件
+11.  **React Redux ES6 Snippets** ：Redux代码片段工具
+12.  **React-Native/React/Redux snippets for es6/es7** ：react代码片段工具
+13.  **Vetur** ： Vue多功能集成插件，包括：语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger。vscode官方钦定Vue插件，Vue开发者必备 
+14.  **Bracket Pair Colorizer** ： 给括号加上不同的颜色，便于区分不同的区块，使用者可以定义不同括号类型和不同颜色 
 
 
 
