@@ -1,6 +1,6 @@
 # vblog：分布式个人博客管理系统
 
-# 目的
+## 一、目的
 ​		本项目旨在总结前后端分离常用技术点，形成集前端+后端+小程序+移动端一整套的个人技术博客解决方案。技术采用主流前后端分离微服务架构，并涵盖持续集成及自动化部署的相关解决方案。既然是以学习为目的，可能并不是以做成一个博客系统为最终目标，可能会基于此基础之上进行技术的扩充。
 
 ​		技术方面，后端采用Java技术栈，前端使用工程化的SPA单体应用实现。项目计划分为两个版本分别为vue+Spring Cloud、react+Dubbo。除了还该常用的增删改查业务之外，也会涉及高并发、限流、支付、爬虫等主流流行技术点。
@@ -11,12 +11,12 @@
 
 ![image-20191116142651832](assets/image-20191116142651832.png)
 
-## 主要技术：
+## 二、主要技术：
 所用到的主要技术点：
 
 ![image-20191116152652573](assets/image-20191116152652573.png)
 
-### 后端
+### 2.1 后端
 
 数据库：MySql
 
@@ -38,7 +38,7 @@ NoSql：Redis、MongoDB
 
 其他：Quartz、FFmpeg、Spring、maven、SSO、WebMagic、Netty等
 
-### 前端
+### 2.2 前端
 前端框架：Vue、React、Ant Design、Element UI
 
 网络请求：axios、Fetch
@@ -55,9 +55,7 @@ NoSql：Redis、MongoDB
 
 代码打包工具：webpack
 
-## 主要功能
-###   后台管理：
-
+## 三、主要功能
 1.登录注册：实现对用户名、手机号及扫码的登录实现，实现单点登陆功能。
 
 2.文章模块:对文章进行管理
@@ -98,9 +96,41 @@ NoSql：Redis、MongoDB
 
 20.数据字典管理
 
+...
+
+## 四、项目汇总
+
+目前主流的技术架构采用前后端分离技术实现，在项目工程上来讲，也应是分离的项目。每个项目进行单独开发。下面是本项目中所有的工程目录。
+
+### 4.1 版本一：
+
+Java采用Spring Boot + Spring Cloud + Spring Data JPA  技术栈
+
+后端项目地址：https://github.com/iquanzhan/vblog-spring-cloud
+
+前端采用react技术栈
+
+前端项目地址：https://github.com/iquanzhan/vblog-web-react
+
+### 4.2 版本二：
+
+Java采用Spring Boot + Dubbo + MyBatis 技术栈
+
+后端项目地址：https://github.com/iquanzhan/vblog-dubbo
+
+前端采用vue技术栈
+
+前端项目地址：https://github.com/iquanzhan/vblog-web-vue
 
 
-## 原型设计
 
-## 数据库设计
+使用nginx+docker+k8s进行持续集成与发布管理。
+
+
+
+
+
+
+
+
 
