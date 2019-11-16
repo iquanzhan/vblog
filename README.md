@@ -152,7 +152,7 @@ Java端采用[IDEA](https://www.jetbrains.com/)进行开发：下载地址：htt
 
 #### 前端开发工具配置及其优化
 
-Java端采用[VS Code](https://code.visualstudio.com)进行开发：下载地址：https://code.visualstudio.com/
+前端采用[VS Code](https://code.visualstudio.com)进行开发：下载地址：https://code.visualstudio.com/
 
 为了便于开发VS Code也有不少**优质的插件**推荐：
 
@@ -171,7 +171,11 @@ Java端采用[VS Code](https://code.visualstudio.com)进行开发：下载地址
 13.  **Vetur** ： Vue多功能集成插件，包括：语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger。vscode官方钦定Vue插件，Vue开发者必备 
 14.  **Bracket Pair Colorizer** ： 给括号加上不同的颜色，便于区分不同的区块，使用者可以定义不同括号类型和不同颜色 
 
+## 六、前后端联调
 
+接口方面采用restful风格api进行开发，后端集成swagger进行接口调试，必要时配合使用[postman](https://www.getpostman.com)。
+
+前端采用mock形式模拟api数据。**前后端独立开发**。
 
 
 
