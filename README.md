@@ -178,6 +178,8 @@ Java端采用[IDEA](https://www.jetbrains.com/)进行开发：下载地址：htt
 本项目中所有接口，采用**restful风格**进行开发。
 
 > 何为restful？请见：https://blog.csdn.net/x541211190/article/details/81141459
+>
+> 对于restful风格api的设计，推荐阮一峰大神的[RESTFul设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
 接口是后端程序员开发的，如果等待后端程序员开发完毕，再去开发前端的内容，效率是很低的。
 
@@ -201,25 +203,90 @@ Java端采用[IDEA](https://www.jetbrains.com/)进行开发：下载地址：htt
 
 3.不允许在路径中出现大写字母（参数名除外）
 
+4.返回的数据可视尽量使用json，不得使用xml等其他形式
+
 #### 6.2.2基本操作定义如下：
 
+```
 GET /users                    # 获取用户列表
-
 GET /users/{userId}       # 查看单个的用户信息
-
 POST /users                 # 新建一个用户
-
 PUT /users/{userId}       # 全量更新某一个用户信息
-
 PATCH /users/{userId}   # 选择性更新某一个用户信息
-
 DELETE /users/{userId} # 删除某一个用户
+```
 
+#### 6.2.3过滤信息、查询参数
 
+```
+?limit=10：指定返回记录的数量
+?offset=10：指定返回记录的开始位置。
+?page=2&per_page=100：指定第几页，以及每页的记录数。
+?sortby=name&order=asc：指定返回结果按照哪个属性排序，以及排序顺序。
+?animal_type_id=1：指定筛选条件
+```
 
+#### 6.2.4响应的数据格式
 
+状态码及其含义：
 
+ ```html
+  - 200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
+  - 201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
+  - 202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
+  - 204 NO CONTENT - [DELETE]：用户删除数据成功。
+  - 400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。
+  - 401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。
+  - 403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
+  - 404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
+  - 406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
+  - 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
+  - 422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
+  - 500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
+ ```
 
+结合阮一峰的文章，响应的数据格式如下：
+
+1.**正常的响应**应该直接返回需要的数据，而无需嵌套或添加任何额外信息。此时HTTP的返回码可以为：
+
+```css
+200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
+201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
+202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
+204 NO CONTENT - [DELETE]：用户删除数据成功。
+```
+
+2.如果状态码是4xx，就应该向用户**返回出错信息**。一般来说，返回的信息中将error作为键名，出错信息作为键值即可：
+
+```css
+{
+      error: "error message"
+}
+```
+
+但很多时候HTTP状态码并不足以表达服务端的所有异常，此时，我们就需要额外定义错误码，而HTTP状态码仅表示错误的大类型。例如，若查找的指定用户信息不存在，HTTP状态码依旧为404，响应可以返回：
+
+```json
+{
+  "code": 40401,
+  "error": "user 11 not found!"
+}
+```
+
+其中，code为自定义错误码40401，error为其对应的错误内容。40401的前缀404表示资源不存在，01可以表示具体表示user这种资源不存在。
+
+**总体而言4xx表示客户端错误，5xx表示服务端错误，业务中更细粒度的可以采用自定义响应码实现。响应体必须采用json格式传送**
+
+### 6.3请求头参数
+
+对于提供给APP（android、ios、pc） 的接口我们可能需要关注一些调用信息，例如 用户登录信息、调用来源、app版本号、api的版本号、安全验证信息 等等，我们将这些信息放入头信息（HTTP HEADER中），下面给出在参数命名的例子：
+
+```
+X-Token 用户的登录token
+Api-Version api的版本号
+App-Version app版本号
+Call-Source 调用来源(IOS、ANDROID、PC、WECHAT、WEB)
+```
 
 
 
