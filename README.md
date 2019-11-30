@@ -325,5 +325,9 @@ Call-Source 调用来源(IOS、ANDROID、PC、WECHAT、WEB)
 
 8.不要写一个大而全的数据更新接口。传入为 POJO 类，不管是不是自己的目标更新字段，都进行 update table set c1=value1,c2=value2,c3=value3; 这是不对的。执行 SQL时，**不要更新无改动的字段**，一是易出错；二是效率低；三是增加 binlog 存储。**更新数据表记录时**，必须同时**更新记录**对应的 **gmt_modified** 字段值为**当前时间**。
 
+### 7.3数据库设计工具
+
+数据库设计工具采用[EZDML](http://www.ezdml.com) 进行设计。
+
 
 

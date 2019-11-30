@@ -1,0 +1,226 @@
+{
+  "RootName": "DataModels",
+  "CTVER": "43543232",
+  "TableCount": 2,
+  "Count": 1,
+  "items": [{
+    "ID": 1,
+    "Name": "权限数据库",
+    "CreateDate": "2019/12/1 0:17:46",
+    "OrderNo": 1,
+    "Tables": {
+      "Count": 2,
+      "items": [
+        {
+          "ID": 1,
+          "Name": "tb_user",
+          "Caption": "用户信息表",
+          "CreateDate": "2019/12/1 0:17:49",
+          "OrderNo": 1,
+          "GraphDesc": "Left=10.00\r\nTop=10.00",
+          "MetaFields": {
+            "Count": 14,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "id",
+                "OrderNo": 1,
+                "DisplayName": "主键",
+                "DataType": 1,
+                "KeyFieldType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 12,
+                "Name": "name",
+                "OrderNo": 2,
+                "DisplayName": "姓名",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 25,
+                "Name": "gender",
+                "OrderNo": 3,
+                "DisplayName": "性别",
+                "DataType": 5,
+                "Nullable": true
+              },
+              {
+                "ID": 26,
+                "Name": "username",
+                "OrderNo": 4,
+                "DisplayName": "用户名",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 27,
+                "Name": "password",
+                "CreateDate": "2019/12/1 0:33:00",
+                "OrderNo": 5,
+                "DisplayName": "密码",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 28,
+                "Name": "birthday",
+                "CreateDate": "2019/12/1 0:33:12",
+                "OrderNo": 6,
+                "DisplayName": "出生日期",
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 29,
+                "Name": "phone",
+                "CreateDate": "2019/12/1 0:33:27",
+                "OrderNo": 7,
+                "DisplayName": "手机号码",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 11
+              },
+              {
+                "ID": 30,
+                "Name": "email",
+                "CreateDate": "2019/12/1 0:33:47",
+                "OrderNo": 8,
+                "DisplayName": "邮箱",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 64
+              },
+              {
+                "ID": 31,
+                "Name": "delete_status",
+                "CreateDate": "2019/12/1 0:34:15",
+                "OrderNo": 9,
+                "DisplayName": "删除状态",
+                "DataType": 5,
+                "Nullable": true
+              },
+              {
+                "ID": 32,
+                "Name": "locked",
+                "CreateDate": "2019/12/1 0:34:31",
+                "OrderNo": 10,
+                "DisplayName": "锁定状态",
+                "DataType": 5,
+                "Nullable": true
+              },
+              {
+                "ID": 33,
+                "Name": "descript",
+                "CreateDate": "2019/12/1 0:35:11",
+                "OrderNo": 11,
+                "DisplayName": "描述信息",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 128
+              },
+              {
+                "ID": 34,
+                "Name": "create_time",
+                "CreateDate": "2019/12/1 0:35:48",
+                "OrderNo": 12,
+                "DisplayName": "创建时间",
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 35,
+                "Name": "update_time",
+                "CreateDate": "2019/12/1 0:36:07",
+                "OrderNo": 13,
+                "DisplayName": "修改时间",
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 36,
+                "Name": "address",
+                "CreateDate": "2019/12/1 0:36:35",
+                "OrderNo": 14,
+                "DisplayName": "地址",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 64
+              }
+            ]
+          }
+        },
+        {
+          "ID": 2,
+          "Name": "tb_role",
+          "Caption": "角色表",
+          "CreateDate": "2019/12/1 0:39:08",
+          "OrderNo": 2,
+          "GraphDesc": "Left=309.00\r\nTop=86.00",
+          "MetaFields": {
+            "Count": 6,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "id",
+                "OrderNo": 1,
+                "DisplayName": "主键",
+                "DataType": 1,
+                "KeyFieldType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 120,
+                "Name": "name",
+                "OrderNo": 2,
+                "DisplayName": "角色名称",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 121,
+                "Name": "descript",
+                "OrderNo": 3,
+                "DisplayName": "角色描述",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 128
+              },
+              {
+                "ID": 122,
+                "Name": "delete_status",
+                "Memo": "1代表是，0代表否",
+                "OrderNo": 4,
+                "DisplayName": "删除状态",
+                "DataType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 123,
+                "Name": "createtime",
+                "OrderNo": 5,
+                "DisplayName": "创建时间",
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 124,
+                "Name": "updatetime",
+                "OrderNo": 6,
+                "DisplayName": "修改时间",
+                "DataType": 4,
+                "Nullable": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }]
+}
