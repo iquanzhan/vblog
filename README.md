@@ -260,7 +260,7 @@ DELETE /users/{userId} # 删除某一个用户
 
 ```css
 {
-      error: "error message"
+      msg: "error message"
 }
 ```
 
@@ -269,7 +269,7 @@ DELETE /users/{userId} # 删除某一个用户
 ```json
 {
   "code": 40401,
-  "error": "user 11 not found!"
+  "msg": "user 11 not found!"
 }
 ```
 
@@ -328,6 +328,8 @@ Call-Source 调用来源(IOS、ANDROID、PC、WECHAT、WEB)
 ### 7.3数据库设计工具
 
 数据库设计工具采用[EZDML](http://www.ezdml.com) 进行设计。
+
+## 八、接口设计
 
 
 

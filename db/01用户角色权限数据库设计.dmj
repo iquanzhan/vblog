@@ -1,7 +1,7 @@
 {
   "RootName": "DataModels",
   "CTVER": "43543232",
-  "TableCount": 2,
+  "TableCount": 5,
   "Count": 1,
   "items": [{
     "ID": 1,
@@ -9,7 +9,7 @@
     "CreateDate": "2019/12/1 0:17:46",
     "OrderNo": 1,
     "Tables": {
-      "Count": 2,
+      "Count": 5,
       "items": [
         {
           "ID": 1,
@@ -161,7 +161,7 @@
           "Caption": "角色表",
           "CreateDate": "2019/12/1 0:39:08",
           "OrderNo": 2,
-          "GraphDesc": "Left=309.00\r\nTop=86.00",
+          "GraphDesc": "Left=298.00\r\nTop=9.00",
           "MetaFields": {
             "Count": 6,
             "items": [
@@ -215,6 +215,206 @@
                 "OrderNo": 6,
                 "DisplayName": "修改时间",
                 "DataType": 4,
+                "Nullable": true
+              }
+            ]
+          }
+        },
+        {
+          "ID": 3,
+          "Name": "tb_resource",
+          "Caption": "资源表",
+          "CreateDate": "2019/12/1 13:41:20",
+          "OrderNo": 3,
+          "GraphDesc": "Left=592.00\r\nTop=7.00",
+          "MetaFields": {
+            "Count": 13,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "id",
+                "OrderNo": 1,
+                "DisplayName": "主键",
+                "DataType": 1,
+                "KeyFieldType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 12,
+                "Name": "name",
+                "OrderNo": 2,
+                "DisplayName": "资源名称",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 13,
+                "Name": "icon",
+                "OrderNo": 3,
+                "DisplayName": "图标",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 32
+              },
+              {
+                "ID": 14,
+                "Name": "level",
+                "Memo": "目录1,菜单2,按钮3",
+                "OrderNo": 4,
+                "DisplayName": "级别",
+                "DataType": 2,
+                "Nullable": true
+              },
+              {
+                "ID": 15,
+                "Name": "descript",
+                "OrderNo": 5,
+                "DisplayName": "描述",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 256
+              },
+              {
+                "ID": 16,
+                "Name": "source_key",
+                "OrderNo": 6,
+                "DisplayName": "资源唯一Key",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 64
+              },
+              {
+                "ID": 17,
+                "Name": "source_url",
+                "OrderNo": 7,
+                "DisplayName": "资源url",
+                "DataType": 1,
+                "Nullable": true,
+                "DataLength": 256
+              },
+              {
+                "ID": 18,
+                "Name": "delete_status",
+                "OrderNo": 8,
+                "DisplayName": "删除状态",
+                "DataType": 5,
+                "Nullable": true
+              },
+              {
+                "ID": 19,
+                "Name": "type",
+                "Memo": "目录1,菜单2,按钮3",
+                "OrderNo": 9,
+                "DisplayName": "资源类型",
+                "DataType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 20,
+                "Name": "parent_id",
+                "OrderNo": 10,
+                "DisplayName": "父级Id",
+                "DataType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 21,
+                "Name": "sort",
+                "OrderNo": 11,
+                "DisplayName": "排序字段",
+                "DataType": 2,
+                "Nullable": true
+              },
+              {
+                "ID": 22,
+                "Name": "create_time",
+                "OrderNo": 12,
+                "DataType": 4,
+                "Nullable": true
+              },
+              {
+                "ID": 23,
+                "Name": "update_time",
+                "OrderNo": 13,
+                "DataType": 4,
+                "Nullable": true
+              }
+            ]
+          }
+        },
+        {
+          "ID": 4,
+          "Name": "tb_user_role",
+          "Caption": "用户角色关联表",
+          "CreateDate": "2019/12/1 13:50:36",
+          "OrderNo": 4,
+          "GraphDesc": "Left=256.00\r\nTop=337.00",
+          "MetaFields": {
+            "Count": 3,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "Id",
+                "OrderNo": 1,
+                "DisplayName": "主键",
+                "DataType": 1,
+                "KeyFieldType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 2,
+                "Name": "user_id",
+                "OrderNo": 2,
+                "DisplayName": "用户Id",
+                "DataType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 35,
+                "Name": "role_id",
+                "OrderNo": 3,
+                "DisplayName": "角色Id",
+                "DataType": 1,
+                "Nullable": true
+              }
+            ]
+          }
+        },
+        {
+          "ID": 5,
+          "Name": "tb_role_resource",
+          "Caption": "角色资源表",
+          "CreateDate": "2019/12/1 13:52:29",
+          "OrderNo": 5,
+          "GraphDesc": "Left=549.00\r\nTop=320.00",
+          "MetaFields": {
+            "Count": 3,
+            "items": [
+              {
+                "ID": 1,
+                "Name": "Id",
+                "OrderNo": 1,
+                "DisplayName": "编号",
+                "DataType": 1,
+                "KeyFieldType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 2,
+                "Name": "role_id",
+                "OrderNo": 2,
+                "DisplayName": "角色Id",
+                "DataType": 1,
+                "Nullable": true
+              },
+              {
+                "ID": 47,
+                "Name": "resource_if",
+                "OrderNo": 3,
+                "DisplayName": "资源Id",
+                "DataType": 1,
                 "Nullable": true
               }
             ]
